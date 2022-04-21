@@ -52,18 +52,23 @@ function App() {
           <p className="temperature">
             Current Temperature: {Math.round(weather?.main?.temp)}°F
           </p>
+
           <p className="citySearch">City: {weather?.name}</p>
           <p className="tempHighLow">
             Current: High: {Math.round(weather?.main?.temp_max)}°F / Low:{" "}
             {Math.round(weather?.main?.temp_min)}°F
           </p>
+
           <p className="currentCondition">
             Conditions: {weather?.weather?.[0]?.description}
           </p>
+
           <p className="moisture">Humidity: {weather?.main?.humidity}%</p>
+
           <p className="feelsLike">
             Feels like: {Math.round(weather?.main?.feels_like)}°F
           </p>
+
           <p className="currentDate"> Current Date & Time: {usDate}</p>
         </div>
       </div>
