@@ -22,7 +22,6 @@ function App() {
         } else {
           if (response.status === 404) {
           }
-
           throw new Error("You have an error");
         }
       })
