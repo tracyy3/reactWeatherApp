@@ -10,6 +10,12 @@ function App() {
     ifClicked();
   }, []);
 
+  today.toLocaleString("en-US", {
+    timeZone: "America/New_York",
+    dateStyle: "full",
+    timeStyle: "full",
+  });
+
   function ifClicked() {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?zip=${zip},US&appid=c237510cf91410feb66c6741d1a4860c&units=imperial`
@@ -30,21 +36,6 @@ function App() {
         console.log(weather);
       })
       .catch((error) => console.log(error));
-
-    // fetch()
-    //   // `https://api.unsplash.com/search/photos?query=${locations}&client_id=nYwPPTXApAh1zUUFKHFITxs5vw8PiV62QEDm6X1dQqc`
-    //   .then((response) => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     } else {
-    //       throw new Error("You made a mistake");
-    //     }
-    //   })
-    //   .then((data) => {
-    //     console.log(data);
-    //     setPhotos(data?.results[0]?.urls?.raw);
-    //   })
-    // .catch((error) => console.log(error));
   }
   return (
     <div className="app">
@@ -62,22 +53,24 @@ function App() {
           </button>
         </div>
         <div className="app__data">
-          <p className="temp">Current Temperature: {weather?.main?.temp}</p>
+          <p className="temp">
+            Current Temperature: {Math.round(weather?.main?.temp)}°F
+          </p>
           <p className="city">Current City: {weather?.name}</p>
           <p className="tempHiLo">
-            Current High/Low: High: {weather?.main?.temp_max}&#176;F Low:{" "}
-            {weather?.main?.temp_min}&#176;F
+            Current High/Low: High: {Math.round(weather?.main?.temp_max)} °F
+            Low: {Math.round(weather?.main?.temp_min)}°F
           </p>
           <p className="currentConditions">
             Current Conditions: {weather?.weather?.[0]?.description}
           </p>
           <p className="humidity">
-            Current Humidity: {weather?.main?.humidity}
+            Current Humidity: {weather?.main?.humidity}%
           </p>
           <p className="feelsLike">
-            Feels like: {weather?.main?.feels_like}&#176;F
+            Feels like: {Math.round(weather?.main?.feels_like)}°F
           </p>
-          <p className="currentDate"> Current Date is {today}</p>
+          <p className="currentDate"> Current Date: {today}</p>
         </div>
         <img className="app__image" src={photos} alt="" />
       </div>
