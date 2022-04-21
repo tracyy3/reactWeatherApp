@@ -2,19 +2,14 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const today = `${new Date()}`;
+  const today = new Date();
   const [weather, setWeather] = useState({});
   const [zip, setZip] = useState("28217");
   const [photos, setPhotos] = useState([]);
+  let usDate = today.toLocaleString("en-US", { timeZone: "America/New_York" });
   useEffect(() => {
     ifClicked();
   }, []);
-
-  today.toLocaleString("en-US", {
-    timeZone: "America/New_York",
-    dateStyle: "full",
-    timeStyle: "full",
-  });
 
   function ifClicked() {
     fetch(
@@ -70,7 +65,7 @@ function App() {
           <p className="feelsLike">
             Feels like: {Math.round(weather?.main?.feels_like)}°F
           </p>
-          <p className="currentDate"> Current Date: {today}</p>
+          <p className="currentDate"> Current Date & Time: {usDate}</p>
         </div>
         <img className="app__image" src={photos} alt="" />
       </div>
