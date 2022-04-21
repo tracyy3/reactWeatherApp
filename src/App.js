@@ -33,41 +33,39 @@ function App() {
       .catch((error) => console.log(error));
   }
   return (
-    <div className="app">
-      <div className="wrapper">
+    <div className="weatherApp">
+      <div className="wrap">
         <div className="search">
           <input
             type="text"
             value={zip}
             onChange={(e) => setZip(e.target.value)}
             placeholder="Enter zip"
-            className="location_input"
+            className="locationInput"
           />
-          <button className="location_searcher" onClick={ifClicked}>
+          <button className="searchButton" onClick={ifClicked}>
             Search Location
           </button>
         </div>
+
         <div className="app__data">
-          <p className="temp">
+          <p className="temperature">
             Current Temperature: {Math.round(weather?.main?.temp)}°F
           </p>
-          <p className="city">Current City: {weather?.name}</p>
-          <p className="tempHiLo">
-            Current High/Low: High: {Math.round(weather?.main?.temp_max)} °F
-            Low: {Math.round(weather?.main?.temp_min)}°F
+          <p className="citySearch">City: {weather?.name}</p>
+          <p className="tempHighLow">
+            Current: High: {Math.round(weather?.main?.temp_max)}°F / Low:{" "}
+            {Math.round(weather?.main?.temp_min)}°F
           </p>
-          <p className="currentConditions">
-            Current Conditions: {weather?.weather?.[0]?.description}
+          <p className="currentCondition">
+            Conditions: {weather?.weather?.[0]?.description}
           </p>
-          <p className="humidity">
-            Current Humidity: {weather?.main?.humidity}%
-          </p>
+          <p className="moisture">Humidity: {weather?.main?.humidity}%</p>
           <p className="feelsLike">
             Feels like: {Math.round(weather?.main?.feels_like)}°F
           </p>
           <p className="currentDate"> Current Date & Time: {usDate}</p>
         </div>
-        <img className="app__image" src={photos} alt="" />
       </div>
     </div>
   );

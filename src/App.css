@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
-.app {
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@300;400&family=Nanum+Gothic&family=Quicksand:wght@300&display=swap");
+.weatherApp {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,7 +10,50 @@
   width: vw;
 }
 
-.wrapper {
+.temperture {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+}
+
+.citySearch {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+}
+
+.tempHighLow {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+}
+
+.currentCondition {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+  text-transform: capitalize;
+}
+
+.moisture {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+}
+
+.feelsLike {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+}
+
+.currentDate {
+  margin: 5px;
+  font-family: "Bitter", serif;
+  color: #2e2e2e;
+}
+
+.wrap {
   padding: 25px;
   border: 0.1px solid rgb(96, 96, 96);
   display: flex;
@@ -25,13 +68,7 @@
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.app__image {
-  margin: 24px;
-  max-height: 500px;
-  width: auto;
-  border-radius: 10px;
-}
-.location_searcher {
+.searchButton {
   padding: 8px;
   color: white;
   background-color: #333;
@@ -39,47 +76,10 @@
   border-radius: 5px;
   margin-left: 5px;
 }
-.location_input {
+
+.locationInput {
   padding: 8px;
   border: 1px solid rgba(255, 255, 255, 0.6);
   color: #333;
   border-radius: 5px;
-}
-
-.temp {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
-}
-
-.city {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
-}
-.tempHiLo {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
-}
-.currentConditions {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
-  text-transform: capitalize;
-}
-.humidity {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
-}
-.feelsLike {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
-}
-.currentDate {
-  margin: 5px;
-  font-family: "Bitter", serif;
-  color: #2e2e2e;
 }
